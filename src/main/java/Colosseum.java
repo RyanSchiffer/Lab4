@@ -72,6 +72,34 @@ public class Colosseum {
      *         Implement this function.
      */
     public static Pokemon buildPokemon() {
+        System.out.println("Please name your Pokemon:");
+        firstPokemon.name = myScan.next();
+        System.out.println("How many points will it have?");
+        firstPokemon.hitPoints = myScan.nextInt();
+        if (firstPokemon.hitPoints > MAX_HIT_POINTS) {
+            System.out.println("Sorry. Hit points must be between 1 and 50:");
+            firstPokemon.hitPoints = myScan.nextInt();
+        }
+        if (firstPokemon.hitPoints < 1) {
+            System.out.println("Sorry. Hit points must be between 1 and 50:");
+            firstPokemon.hitPoints = myScan.nextInt();
+        }
+        System.out.println("Enter your attack level (1-49:");
+        firstPokemon.attackLevel = myScan.nextInt();
+        if (firstPokemon.attackLevel > 49) {
+            System.out.println("Sorry. The attack level must be between 1 and 49:");
+            firstPokemon.attackLevel = myScan.nextInt();
+        }
+        if (firstPokemon.attackLevel < 0) {
+            System.out.println("Sorry. The attack level must be between 1 and 49:");
+            firstPokemon.attackLevel = myScan.nextInt();
+        }
+        System.out.println("Enter your defense level (1-23):");
+        firstPokemon.defenseLevel = myScan.next();
+        if (firstPokemon.defenseLevel > 3) {
+            System.out.println("Sorry. ");
+        }
+
         Pokemon tempPokemon = new Pokemon();
         return tempPokemon;
     }
@@ -90,7 +118,11 @@ public class Colosseum {
      * Implement this function.
      */
     public static void printWhoIsAhead() {
-        System.out.println("Implement me!");
+        if (firstPokemon > secondPokemon) {
+            System.out.println(firstPokemon + " is currently ahead!");
+        } else {
+            System.out.println(secondPokemon + " is currently ahead!");
+        }
     }
 
     /**
